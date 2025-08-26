@@ -1,0 +1,19 @@
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+/Users/wisesa/.rbenv/versions/3.2.4/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-3lsp1q sitelibdir\=./.gem.20250822-42118-3lsp1q clean
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-3lsp1q sitelibdir\=./.gem.20250822-42118-3lsp1q
+compiling cparse.c
+linking shared-object racc/cparse.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-3lsp1q sitelibdir\=./.gem.20250822-42118-3lsp1q install
+/usr/bin/install -c -m 0755 cparse.bundle ./.gem.20250822-42118-3lsp1q/racc
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-3lsp1q sitelibdir\=./.gem.20250822-42118-3lsp1q clean

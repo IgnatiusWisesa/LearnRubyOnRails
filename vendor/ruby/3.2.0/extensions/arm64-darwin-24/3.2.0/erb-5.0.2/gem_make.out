@@ -1,0 +1,20 @@
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/erb-5.0.2/ext/erb/escape
+/Users/wisesa/.rbenv/versions/3.2.4/bin/ruby extconf.rb
+checking for rb_ext_ractor_safe() in ruby.h... yes
+creating Makefile
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-dh6hul sitelibdir\=./.gem.20250822-42118-dh6hul clean
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-dh6hul sitelibdir\=./.gem.20250822-42118-dh6hul
+compiling escape.c
+linking shared-object erb/escape.bundle
+ld: warning: ignoring duplicate libraries: '-lruby.3.2'
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-dh6hul sitelibdir\=./.gem.20250822-42118-dh6hul install
+/usr/bin/install -c -m 0755 escape.bundle ./.gem.20250822-42118-dh6hul/erb
+
+current directory: /Users/wisesa/Documents/MAIN/RubyOnRails/blog/vendor/ruby/3.2.0/gems/erb-5.0.2/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250822-42118-dh6hul sitelibdir\=./.gem.20250822-42118-dh6hul clean
