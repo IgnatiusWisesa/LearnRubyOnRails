@@ -33,3 +33,10 @@ builder:
 proxy:
   ssl: false
   host: 3.106.145.17
+
+healthcheck:
+  path: /up
+  interval: 10s
+  timeout: 5s
+  retries: 6
+  start_period: 40s
