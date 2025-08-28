@@ -1,0 +1,4 @@
+<h1>My Profile</h1>
+<p><b>Name:</b> <%= @profile.full_name.presence || "-" %></p>
+<p><b>Address:</b><br><%= simple_format(@profile.address) if @profile.address.present? %></p>
+<%= link_to "Edit", edit_profile_path %>

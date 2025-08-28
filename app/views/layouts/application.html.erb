@@ -24,6 +24,28 @@
   </head>
 
   <body>
+    <!-- Navbar -->
+    <nav style="margin-bottom:1rem">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>
+        <small>
+          — sign-ins: <%= current_user.sign_in_count %>
+          — last: <%= current_user.last_sign_in_at&.strftime("%Y-%m-%d %H:%M") %>
+          — IP: <%= current_user.last_sign_in_ip %>
+        </small>
+        |
+        <%= link_to "Sign out", destroy_user_session_path, data: { turbo_method: :delete } %>
+      <% else %>
+        <%= link_to "Sign in", new_user_session_path %> |
+        <%= link_to "Sign up", new_user_registration_path %>
+      <% end %>
+    </nav>
+
+    <!-- Flash messages -->
+    <% if notice.present? %><p style="color:green"><%= notice %></p><% end %>
+    <% if alert.present?  %><p style="color:red"><%= alert  %></p><% end %>
+
+    <!-- Always render content! -->
     <%= yield %>
   </body>
 </html>

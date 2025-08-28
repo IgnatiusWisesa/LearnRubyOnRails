@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
   resources :posts do
     resources :comments
   end
+
+  resource :profile, only: %i[show edit update]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+
+  if Rails.env.development?
+    mount LetterOpenerWeb::Engine, at: "letter_opener"
+  end
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
