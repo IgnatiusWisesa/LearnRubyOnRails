@@ -1,9 +1,20 @@
 Rails.application.routes.draw do
+
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks"
   }
+
   resources :posts do
     resources :comments
+    resources :reactions, only: %i[create], module: :posts do
+      delete :destroy, on: :collection
+    end
+  end
+
+  resources :comments, only: %i[create update destroy] do
+    resources :reactions, only: %i[create], module: :comments do
+      delete :destroy, on: :collection
+    end
   end
 
   resource :profile, only: %i[show edit update]
