@@ -1,4 +1,25 @@
 <div id="<%= dom_id(comment) %>">
+  <p>
     <%= comment.content %> -
-    <%= time_tag comment.updated_at, "data-local": "time-ago"%>
+    <%= time_tag comment.updated_at, "data-local": "time-ago" %>
+  </p>
+
+  <div class="reactions">
+    <% Reaction::KINDS.each do |k| %>
+      <%= button_to "React: #{k}",
+            comment_reactions_path(comment, kind: k),
+            method: :post %>
+
+      <%= button_to "Unreact: #{k}",
+            comment_reactions_path(comment, kind: k),
+            method: :delete %>
+    <% end %>
+
+    <small>
+      Total: <%= comment.reactions.count %>
+      <% Reaction::KINDS.each do |k| %>
+        | <%= k %>: <%= comment.reactions.where(kind: k).count %>
+      <% end %>
+    </small>
+  </div>
 </div>

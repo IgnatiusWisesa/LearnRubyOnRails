@@ -6,9 +6,30 @@
 
 <div>
   <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
-
+  <%= link_to "Back to posts", posts_path %> |
   <%= button_to "Destroy this post", @post, method: :delete %>
 </div>
+
+<hr>
+
+<h3>Reactions</h3>
+<% Reaction::KINDS.each do |k| %>
+  <%= button_to "React: #{k}",
+        post_reactions_path(@post, kind: k),
+        method: :post %>
+
+  <%= button_to "Unreact: #{k}",
+        post_reactions_path(@post, kind: k),
+        method: :delete %>
+<% end %>
+
+<p>Total reactions: <%= @post.reactions.count %></p>
+<ul>
+  <% Reaction::KINDS.each do |k| %>
+    <li><%= k %>: <%= @post.reactions.where(kind: k).count %></li>
+  <% end %>
+</ul>
+
+<hr>
 
 <%= render "comments/comments", post: @post %>
