@@ -1,0 +1,3 @@
+<h1>New comment on: <%= @post.title %></h1>
+<p><strong>Comment:</strong> <%= @comment.content.presence || "(no text)" %></p>
+<p>Post URL: <%= post_url(@post) %></p>

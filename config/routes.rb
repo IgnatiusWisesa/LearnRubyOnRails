@@ -1,3 +1,5 @@
+require "sidekiq/web"
+
 Rails.application.routes.draw do
 
   devise_for :users, controllers: {
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   if Rails.env.development?
+    mount Sidekiq::Web => "/sidekiq"
     mount LetterOpenerWeb::Engine, at: "letter_opener"
   end
 
