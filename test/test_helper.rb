@@ -8,8 +8,20 @@ module ActiveSupport
     parallelize(workers: :number_of_processors)
 
     # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
-    fixtures :all
+    # fixtures :all
 
     # Add more helper methods to be used by all tests here...
+  end
+
+  class ActionDispatch::IntegrationTest
+    include Devise::Test::IntegrationHelpers
+
+    def log_in(user, password: "password")
+      post user_session_path, params: {
+        user: { email: user.email, password: password }
+      }
+      follow_redirect! if response.redirect?
+      assert_response :success
+    end
   end
 end

@@ -14,13 +14,12 @@
 
 <h3>Reactions</h3>
 <% Reaction::KINDS.each do |k| %>
-  <%= button_to "React: #{k}",
-        post_reactions_path(@post, kind: k),
-        method: :post %>
-
-  <%= button_to "Unreact: #{k}",
-        post_reactions_path(@post, kind: k),
-        method: :delete %>
+  <% existing = @post.reactions.exists?(user: current_user, kind: k) %>
+  <% if existing %>
+    <%= button_to "Unreact: #{k}", post_reactions_path(@post, kind: k), method: :delete %>
+  <% else %>
+    <%= button_to "React: #{k}", post_reactions_path(@post, kind: k), method: :post %>
+  <% end %>
 <% end %>
 
 <p>Total reactions: <%= @post.reactions.count %></p>
