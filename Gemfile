@@ -73,4 +73,4 @@ gem "ruby-vips", "~> 2.2"
 
 gem "devise", "~> 4.9"
 
-gem "responders", "~> 3.1"
+gem "responders", "~> 3.2"
